@@ -1,10 +1,15 @@
-// next.config.js
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
-
-  // Removed the "env" block
-
+  env: {
+    // Change to your local backend URL (Laravel API)
+    API_PROD_URL: "https://api.in-sourceit.com/api/admin",  // Local API URL
+  
+    // Change to your local storage URL (same as API URL or wherever your assets are served)
+    storageURL: "http://api.in-sourceit.com",  // Local storage URL
+  },
+  
   redirects: async () => {
     return [
       {
@@ -14,7 +19,6 @@ const nextConfig = {
       },
     ];
   },
-
   images: {
     remotePatterns: [
       {
@@ -25,13 +29,13 @@ const nextConfig = {
         protocol: "http",
         hostname: "127.0.0.1:8000",
       },
+
       {
         protocol: "https",
         hostname: "api.in-sourceit.com",
       },
     ],
   },
-
   devIndicators: {
     buildActivity: false,
   },
