@@ -7,7 +7,7 @@ const nextConfig = {
     API_PROD_URL: "https://api.in-sourceit.com/api/admin",  // Local API URL
   
     // Change to your local storage URL (same as API URL or wherever your assets are served)
-    storageURL: "http://api.in-sourceit.com",  // Local storage URL
+    storageURL: "https://api.in-sourceit.com",  // Local storage URL
   },
   
   redirects: async () => {
